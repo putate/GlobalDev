@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+
+{% block title %}Page 2{% endblock %}
+
+{% block stuff %}
+	<li class="nav-item">
+     <a class="nav-link" href="/">Home</a>
+    </li>
+	<li class="nav-item">
+     <a class="nav-link" href="/p1">Highest Fertility Rate per year</a>
+    </li>
+    <li class="nav-item active">
+     <a class="nav-link" href="/p2">Net Change of Population</a>
+    </li>
+	<li class="nav-item">
+     <a class="nav-link" href="/p3">Graph of Rural population</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <!--page content-->
+    <h1>Net Population Change</h1>
+    <form action="/p2">
+		<label for="Countries">Choose a Country:</label>
+		<select name="countries">
+		{{countries}}
+		</select>
+		<br><br>
+		<input type="submit">
+		</form>
+		<p>{{ net_change }}</p><br>
+		<p>{{ avg_pop }}</p>
+	<form action="/">
+{% endblock %}

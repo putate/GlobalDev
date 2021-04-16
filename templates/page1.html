@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+
+{% block title %}Page 1{% endblock %}
+
+{% block stuff %}
+	<li class="nav-item">
+     <a class="nav-link" href="/">Home</a>
+    </li>
+	<li class="nav-item active">
+     <a class="nav-link" href="/p1">Highest Fertility Rate per year</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" href="/p2">Net Change of Population</a>
+    </li>
+	<li class="nav-item">
+     <a class="nav-link" href="/p3">Graph of Rural population</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <!--page content-->
+	<h1>Highest Fertility Rate by Year</h1>
+    <form action="/p1">
+		<label for="Years">Choose a year:</label>
+		<select name="years">
+		{{years}}
+		</select>
+		<br><br>
+		<input type="submit">
+		</form>
+		<p>{{ fertility_rate }}</p><br>
+		<p>{{ birth_rate }}</p>
+	<form action="/">
+{% endblock %}

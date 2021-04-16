@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+
+{% block title %}Page 3{% endblock %}
+
+{% block stuff %}
+	<li class="nav-item">
+     <a class="nav-link" href="/">Home</a>
+    </li>
+	<li class="nav-item">
+     <a class="nav-link" href="/p1">Highest Fertility Rate per year</a>
+    </li>
+    <li class="nav-item">
+     <a class="nav-link" href="/p2">Net Change of Population</a>
+    </li>
+	<li class="nav-item active">
+     <a class="nav-link" href="/p3">Graph of Rural population</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "Rural Population 1980-2013"
+	},
+	data: [{        
+		type: "line",
+      	indexLabelFontSize: 16,
+		dataPoints: [
+			{{ inp }}
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
+{% endblock %}

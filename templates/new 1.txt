@@ -1,0 +1,53 @@
+		  <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/p1">Highest Fertility Rate per year</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/p2">Net Change of Population</a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="/p3">Graph of Rural population</a>
+          </li>
+		  
+		  
+		  def get_points(countries):
+    ruralpop = []
+    years = []
+    print("RunningRural")
+    for data in countries:
+        if data["Year"] not in countries1:
+            years.append(data["Year"])
+    
+    for data in years:
+        
+    
+    points = ""
+    for data in ruralpop:
+        points = points + Markup("{ y: " + data + " },")
+    return points
+	
+	data["Rural Development"]["Rural Population"]
+	
+	yearsPop = []
+    years = 1980
+    while years <= 2013:
+        yearsPop.append(get_points_assist(countries,years))
+        years +=1    
+    options = ""
+	
+	
+	
+	def get_points(countries):
+    yearsPop = []
+    years = 1980
+    while years <= 2013:
+        yearsPop.append(get_points_assist(countries,years))
+        years +=1    
+    options = ""
+    yeers = 1980
+    for data in yearsPop:
+        options = options + Markup("{x :new Date(" + str(yeers) + ",0), y:" + str(data) + "},")
+        yeers +=1
+    return options

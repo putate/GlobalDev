@@ -1,1 +1,1 @@
-# GlobalDev
+# DSW-templates-example
